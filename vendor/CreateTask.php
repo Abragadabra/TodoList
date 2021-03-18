@@ -8,18 +8,16 @@
         exit();
     }
 
-    // подключаюсь к базе через класс PDO
-    $connect = 'mysql:host=localhost;dbname=task';
-    $pdo = new PDO($connect, 'root', 'root');
+    require 'db.php';
 
     // создаю SQL запрос на добавление данных в столбцы таблицы
     $sql = 'INSERT INTO tasks(header, body) VALUES(:header, :task)';
 
     //"подготавливаю" sql запрос
-    $make_request = $pdo->prepare($sql);
+    $query = $pdo->prepare($sql);
 
     // вместо :header и :task записываю переменные
-    $make_request->execute([
+    $query->execute([
         'header' => $header,
         'task' => $task
     ]);

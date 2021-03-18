@@ -17,6 +17,20 @@
             <input type="text" id="task" name="task" placeholder="Задание" class="form-control">
             <button type="submit" name="AddTask" class="btn btn-success">Отправить</button>
         </form>
+
+        <?php
+            // подключаю базу
+            require 'vendor/db.php';
+
+            // получаю данные из таблицы
+            echo '<ul>';
+            $query = $pdo->query('SELECT * FROM `tasks` ORDER BY id DESC ');
+
+            while ($row = $query->fetch(PDO::FETCH_OBJ)) {
+                echo '<li><b>'.$row->header. '<br>' .$row->body.'</b></li>';
+            }
+            echo '</ul>';
+        ?>
     </div>
 </body>
 </html>
