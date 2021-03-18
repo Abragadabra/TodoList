@@ -23,4 +23,6 @@
         'header' => $header,
         'task' => $task
     ]);
+
+    header('Location: /');
 ?>
