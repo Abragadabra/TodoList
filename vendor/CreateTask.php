@@ -14,4 +14,7 @@
 
     // создаю SQL запрос на добавление данных в столбцы таблицы
     $sql = 'INSERT INTO tasks(header, body) VALUES(:header, :task)';
+    
+    //выполняю sql запрос
+    $make_request = $pdo->prepare($sql);
 ?>
