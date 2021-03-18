@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="create.php" method="post">
+        <form action="CreateTask.php" method="post">
             <h1>Список дел</h1>
             <input type="text" id="header-task" name="header-task" placeholder="Заголовок" class="form-control">
             <input type="text" id="task" name="task" placeholder="Задание" class="form-control">
