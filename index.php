@@ -27,7 +27,7 @@
             $query = $pdo->query('SELECT * FROM `tasks` ORDER BY id DESC ');
 
             while ($row = $query->fetch(PDO::FETCH_OBJ)) {
-                echo '<li><b>'.$row->header. '<br>' .$row->body.'</b><button>Удалить</button></li>';
+                echo '<li><b>'.$row->header. '<br>' .$row->body.'</b><a href="vendor/delete.php?id='.$row->id.'"><button>Удалить</button></a></li>';
             }
             echo '</ul>';
         ?>
